@@ -56,6 +56,8 @@ static int	ft_isempty(int fd, int rf, char **line, char **stat_str)
 	if (rf == 0 && stat_str[fd] == 0)
 	{
 		*line = ft_strdup("");
+		if (!*line)
+			return (-1);
 		return (0);
 	}
 	return (ft_line_save(fd, line, stat_str));
